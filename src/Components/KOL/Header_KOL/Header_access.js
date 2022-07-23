@@ -126,6 +126,10 @@ export default function Header_Access() {
         window.open(url);
     };
 
+    function handleGoToPageSaveOpportunity() {
+        navigate('/save-opportunity');
+    }
+
 
 
 
@@ -172,7 +176,7 @@ export default function Header_Access() {
                         <button className="button button_cat1">Cơ hội</button>
                         <div className="dropdown-content_kol"  >
                             <a href="/">  <TravelExploreIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Tìm cơ hội mới</a>
-                            <a href="/save-opportunity">  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
+                            <a onClick={handleGoToPageSaveOpportunity}>  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
                             <a href="/have-opportunity">  <WorkIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã ứng tuyển</a>
                         </div>
                     </div>
