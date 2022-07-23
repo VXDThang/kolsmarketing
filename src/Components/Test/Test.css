@@ -1,0 +1,14 @@
+.rmsc {
+    --rmsc-main: #42f451 !important;
+    --rmsc-hover: #f1f3f5;
+    --rmsc-selected: #14dd68;
+    --rmsc-border: #ccc;
+    --rmsc-gray: rgb(43, 172, 90) !important;
+    --rmsc-bg: #fff;
+    --rmsc-p: 10px;
+    /* Spacing */
+    --rmsc-radius: 4px;
+    /* Radius */
+    --rmsc-h: 38px;
+    /* Height */
+}

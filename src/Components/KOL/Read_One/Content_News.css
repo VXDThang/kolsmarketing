@@ -1,0 +1,43 @@
+.back-ground-content {
+    background: #EEFFF6;
+}
+
+.back-ground-content-title {
+    background: #FAFAFA;
+}
+
+.back-ground-content-job {
+    background: #FFFFFF;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-card {
+    width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.title-card2 {
+    width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-job {
+    position: relative;
+}
+
+.card-choice {
+    position: absolute;
+    right: 0px
+}
+
+.CardHeader {
+    padding: 10px !important
+}

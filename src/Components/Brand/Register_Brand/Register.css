@@ -1,0 +1,39 @@
+.back-ground {
+    padding: 150px 50px;
+    background: url(./register-brand.jpg);
+    background: /* top, transparent red */
+    linear-gradient( #00B14F, rgba(5, 53, 11, 0.45)), /* bottom, image */
+    url(./register-brand.jpg);
+    object-fit: contain;
+    width: 100%;
+    height: 10px;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.paper {
+    background: #e6ffe8;
+    position: absolute;
+    top: 150px;
+    width: 60%;
+    min-height: auto;
+    left: 20%;
+}
+
+.back {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.title {
+    position: absolute;
+    top: 80px;
+    width: 20%;
+    left: 40%;
+}
+
+.regulation {
+    background: #e2e9e2;
+}

@@ -1,0 +1,14 @@
+.notiTitle {
+    display: -webkit-box;
+    max-height: 4.5rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 3;
+    line-height: 1.5rem;
+}
+
+.height_list {
+    height: calc(100vh - 65px);
+}

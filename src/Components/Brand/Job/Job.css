@@ -1,0 +1,52 @@
+.back-ground-content {
+    background: #EEFFF6;
+}
+
+.back-ground-content-title {
+    background: #FAFAFA;
+}
+
+.back-ground-content-job {
+    background: #FFFFFF;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-job {
+    display: -webkit-box;
+    max-height: 3.2rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.6rem;
+}
+
+.title-card2 {
+    width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-job {
+    position: relative;
+}
+
+.card-heart {
+    position: absolute;
+    top: 0px;
+    right: -4px
+}
+
+.list_job {
+    height: calc(100vh - 190px)
+}
+
+.search_listjob {
+    height: calc(100vh - 65px)
+}

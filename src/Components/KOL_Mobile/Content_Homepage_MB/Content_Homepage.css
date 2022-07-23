@@ -1,0 +1,81 @@
+.back-ground-content {
+    background: #EEFFF6;
+    min-height: 100vh;
+}
+
+.back-ground-content-title {
+    background: #FAFAFA;
+}
+
+.back-ground-content-job {
+    background: #FFFFFF;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-card {
+    width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.title-card2 {
+    width: 180px;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-job {
+    position: relative;
+}
+
+.card-heart {
+    position: absolute;
+    top: 0px;
+    right: -4px
+}
+
+.card0heart {
+    position: absolute;
+    top: 75px;
+    right: -4px
+}
+
+.titlenewMB {
+    display: -webkit-box;
+    max-height: 2.6rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.3rem;
+}
+
+.title0newMB {
+    display: -webkit-box;
+    max-height: 2.6rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.3rem;
+}
+
+.titlecardnewMB {
+    display: -webkit-box;
+    max-height: 1.3rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    line-height: 1.3rem;
+}

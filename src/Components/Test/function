@@ -1,0 +1,5 @@
+function formatDateTime(create_time) {
+    const time = new Date(create_time)
+    const result = time.getHours() + ":" + time.getMinutes() + " " + time.getDate() + "/" + time.getMonth() + "/" + time.getFullYear();
+    return result
+};

@@ -1,0 +1,26 @@
+#avatar_kol {
+    border: 1px solid #ddd;
+    padding: 5px;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+#image_kol {
+    border: 1px solid #ddd;
+    padding: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.image-item {
+    display: flex;
+}

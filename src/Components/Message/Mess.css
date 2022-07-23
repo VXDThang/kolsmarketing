@@ -1,0 +1,31 @@
+.last_mess {
+    display: -webkit-box;
+    max-height: 1.6rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    line-height: 1.6rem;
+}
+
+.room_list {
+    height: calc(100vh - 145px)
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 25px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

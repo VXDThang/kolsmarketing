@@ -1,0 +1,55 @@
+.flex-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.flex-container_div {}
+
+.test {
+    background: #e9d8f4;
+    color: #58257b;
+    margin: 5px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 50px;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: #58257b !important;
+    font-weight: bold !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #00B14F !important;
+}
+
+.button_write_recruitment {
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.button_write_recruitment:hover {
+    background-color: #FAFAFA;
+    color: #3e8e41;
+    font-weight: bold;
+}
+
+.carousel {
+    width: 100%;
+    object-fit: contain;
+}
+
+.carousel .slide img {
+    max-height: 400px;
+    /* change this to whatever you want */
+    width: 100%;
+    object-fit: contain;
+}
+
+.image-item {
+    display: flex;
+}
+
+.list_post {
+    height: calc(100vh - 240px)
+}

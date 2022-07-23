@@ -1,0 +1,28 @@
+.headerMb {
+    overflow: hidden;
+}
+
+.headerMb a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.headerMb a.logo {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.headerMb-right {
+    float: right;
+}

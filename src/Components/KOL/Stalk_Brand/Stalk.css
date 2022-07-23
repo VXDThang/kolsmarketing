@@ -1,0 +1,44 @@
+.cov {
+    height: 325px;
+    background-color: rgb(255, 255, 255);
+}
+
+.ava {
+    position: relative;
+    bottom: 75px;
+    padding-left: 50px;
+}
+
+#cover {
+    width: 100%;
+    height: 225px;
+}
+
+#avatar {
+    /* width: 300px;
+    height: 150px;
+    clip-path: circle(75px at 50% 50%); */
+    border: 1px solid #ddd;
+    padding: 5px;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+.name_brand {
+    position: relative;
+    bottom: 140px;
+    right: -250px;
+    width: "500px"
+}
+
+.link {
+    position: relative;
+    bottom: 120px;
+    right: -250px;
+}

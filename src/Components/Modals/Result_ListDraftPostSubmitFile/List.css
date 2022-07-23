@@ -1,0 +1,14 @@
+.content_list {
+    display: -webkit-box;
+    max-height: 60px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 4;
+    line-height: 15px;
+}
+
+.hoverList:hover {
+    background-color: #F0E168;
+}
