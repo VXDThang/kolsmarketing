@@ -3,7 +3,7 @@
  //backend
 const DOMAIN_API = 'https://kolsmarketing-be.herokuapp.com/';
 //frontend
-const DOMAIN_FE = 'https://kolsmarketing-fe';
+const DOMAIN_FE = 'https://kolsmarketing-fe.netlify.app';
 const CLOUDINARY_NAME = 'kolcloudinary';
 const PRESET_NAME = 'kolpreset';
 

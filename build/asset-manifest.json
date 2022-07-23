@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3295a89e.chunk.css",
+    "main.js": "/static/js/main.734ece2f.chunk.js",
+    "main.js.map": "/static/js/main.734ece2f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.025a666f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.025a666f.js.map",
+    "static/css/2.8e0198b2.chunk.css": "/static/css/2.8e0198b2.chunk.css",
+    "static/js/2.d6f639de.chunk.js": "/static/js/2.d6f639de.chunk.js",
+    "static/js/2.d6f639de.chunk.js.map": "/static/js/2.d6f639de.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.8e0198b2.chunk.css.map": "/static/css/2.8e0198b2.chunk.css.map",
+    "static/css/main.3295a89e.chunk.css.map": "/static/css/main.3295a89e.chunk.css.map",
+    "static/js/2.d6f639de.chunk.js.LICENSE.txt": "/static/js/2.d6f639de.chunk.js.LICENSE.txt",
+    "static/media/Register.css": "/static/media/register-brand.06c45026.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.025a666f.js",
+    "static/css/2.8e0198b2.chunk.css",
+    "static/js/2.d6f639de.chunk.js",
+    "static/css/main.3295a89e.chunk.css",
+    "static/js/main.734ece2f.chunk.js"
+  ]
+}
