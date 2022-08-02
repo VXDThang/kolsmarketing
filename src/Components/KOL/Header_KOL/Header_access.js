@@ -126,7 +126,21 @@ export default function Header_Access() {
         window.open(url);
     };
 
+    function handleClickSaveOpportunity() {
+        navigate('/save-opportunity');
+    }
 
+    function handleClickHaveOpportunity() {
+        navigate('/have-opportunity');
+    }
+
+    function handleClickListBrand() {
+        navigate('/list-brand');
+    }
+
+    function handleClickSaveBrand() {
+        navigate('/save-brand');
+    }
 
 
     return (
@@ -148,16 +162,16 @@ export default function Header_Access() {
                         <button className="button button_cat1">Cơ hội</button>
                         <div className="dropdown-content_kol"  >
                             <a href="/">  <TravelExploreIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Tìm cơ hội mới</a>
-                            <a href="/save-opportunity">  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
-                            <a href="/have-opportunity">  <WorkIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã ứng tuyển</a>
+                            <a onClick={handleClickSaveOpportunity}>  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
+                            <a onClick={handleClickHaveOpportunity}>  <WorkIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã ứng tuyển</a>
                         </div>
                     </div>
 
                     <div className="dropdown_kol" style={{ paddingLeft: "30px" }}>
                         <button className="button button_cat1">Nhãn hàng</button>
                         <div className="dropdown-content_kol" >
-                            <a href="/list-brand">  <ListAltIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Danh sách nhãn hàng</a>
-                            <a href="/save-brand">  <StarsIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} />Nhãn hàng đã lưu</a>
+                            <a onClick={handleClickListBrand}>  <ListAltIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Danh sách nhãn hàng</a>
+                            <a onClick={handleClickSaveBrand}>  <StarsIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} />Nhãn hàng đã lưu</a>
 
                         </div>
                     </div>
