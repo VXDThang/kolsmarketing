@@ -34,8 +34,8 @@ const Job_Card = ({ id,name }) => {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        if (result.length > 15) {
-                            setListPost(result.slice(0, 11));
+                        if (result.length > 10) {
+                            setListPost(result.slice(0, 10));
                         }
                         else {
                             setListPost(result);

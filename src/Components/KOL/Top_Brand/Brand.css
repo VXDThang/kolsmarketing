@@ -11,15 +11,15 @@
     background-color: #000000 !important;
 }
 
-.title-brand-name {
+.title-brand-name1 {
     display: -webkit-box;
-    height: 40px;
+    height: 24px;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-    -webkit-line-clamp: 2;
-    line-height: 18px;
+    -webkit-line-clamp: 1;
+    line-height: 24px;
 }
 
 .about-brand {

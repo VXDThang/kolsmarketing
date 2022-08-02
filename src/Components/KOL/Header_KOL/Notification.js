@@ -250,14 +250,6 @@ export default function Notification({ isOpen, isClose, listNoti }) {
                 </div>
                 :
                 <div>
-                    {/* <div style={{
-                        paddingTop: "10px", paddingRight: "20px", textAlign: "right",
-                        fontWeight: 600, color: "#660066", fontFamily: "Segoe UI"
-                    }}>
-                        <span style={{ cursor: "pointer" }}>
-                            Đánh dấu đã đọc tất cả
-                        </span>
-                    </div> */}
                     <List>
 
                         {listNewNotification.length > 0 && listNewNotification.map((list, index) => (

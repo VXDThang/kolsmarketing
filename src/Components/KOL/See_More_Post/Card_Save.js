@@ -108,8 +108,7 @@ const CardSave = ({ id, idBrand, title, brandName, time, address, hot, cast, ima
 
     return (
         <div style={{ paddingBottom: "10px" }} >
-
-            <Card className="card-job" sx={{ display: 'flex', height: 120 }}>
+            <Card className="card-job" sx={{ display: 'flex', height: 120,"&:hover": { bgcolor: "#edf4fb" } }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                     <CardMedia
                         component="img"

@@ -7,14 +7,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import Stack from '@mui/material/Stack';
 import Tooltip from '@mui/material/Tooltip';
-import { DOMAIN_FE, DOMAIN_API} from '../../../config/const'
+import { DOMAIN_FE, DOMAIN_API } from '../../../config/const'
 
+import Grid from '@mui/material/Grid';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ChatIcon from '@mui/icons-material/Chat';
 import Divider from '@mui/material/Divider';
 import DoNotDisturbOnIcon from '@mui/icons-material/DoNotDisturbOn';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
+//file
+import Modal_See_Profile_Kol from '../../Modals/Brand_See_Profile_Kol';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -29,7 +33,7 @@ const ExpandMore = styled((props) => {
 
 function formatDateTime(create_time) {
     const time = new Date(create_time)
-    const result = time.getHours() + ":" + time.getMinutes() + " " + time.getDate() + "/" + time.getMonth() + "/" + time.getFullYear();
+    const result = time.getHours() + ":" + time.getMinutes() + " " + (time.getDate()+1) + "/" + (time.getMonth()+1) + "/" + time.getFullYear();
     return result
 };
 
@@ -44,11 +48,24 @@ export default function Show_post({ detailPost, id, loadingParent }) {
 
     const [loadingAfterUn_Active, setLoadingAfterUn_Active] = React.useState(true);
 
-    const [isOpenRecruitment, setIsOpenRecruitment] = React.useState(detailPost.state=='1'? true:false);
+    const [openModalProfileKOL, setOpenModalProfileKOL] = React.useState(false);
+    const [idKolToSeeProfile, setIdKolToSeeProfile] = React.useState('');
+
+    const [isOpenRecruitment, setIsOpenRecruitment] = React.useState(detailPost.state == '1' ? true : false);
+
+    const handleClickSeeProfile = (id_kol) => {
+        setIdKolToSeeProfile(id_kol);
+        setOpenModalProfileKOL(true)
+    }
+
+    const handleCloseSeeProfile = () => {
+        setIdKolToSeeProfile('');
+        setOpenModalProfileKOL(false)
+    }
+
 
     async function handleClickOnOffRecruitment() {
-        if (isOpenRecruitment)
-        {
+        if (isOpenRecruitment) {
             try {
                 let url1 = "";
                 url1 = DOMAIN_API + `posts/unactive-post`;
@@ -72,8 +89,7 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                 console.log("error: ", error)
             }
         }
-        else
-        {
+        else {
             try {
                 let url1 = "";
                 url1 = DOMAIN_API + `posts/active-post`;
@@ -294,66 +310,75 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                         </div>
                         <div style={{ paddingTop: "5px" }}>
                             <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Tiểu đề:
+                                Tiêu đề:
                             </div>
                             <div style={{ fontWeight: 400, fontSize: "14px" }}>
                                 {detailPost.title}
                             </div>
                         </div>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Lượt xem:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {detailPost.views}
-                            </div>
-                        </div>
+                        <Grid container spacing={2}>
+                            <Grid item xs={6}>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Địa điểm:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {detailPost.address}
-                            </div>
-                        </div>
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Lượt xem:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {detailPost.views}
+                                    </div>
+                                </div>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Đăng lúc:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {detailPost.write_time}
-                            </div>
-                        </div>
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Địa điểm:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {detailPost.address}
+                                    </div>
+                                </div>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Số lượng:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {detailPost.amount}
-                            </div>
-                        </div>
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Đăng lúc:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {detailPost.write_time}
+                                    </div>
+                                </div>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Giới tính:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {detailPost.gender}
-                            </div>
-                        </div>
+                            </Grid>
+                            <Grid item xs={6}>
 
-                        <div style={{ paddingTop: "5px" }}>
-                            <div style={{ fontWeight: 500, fontSize: "14px" }}>
-                                Mức lương:
-                            </div>
-                            <div style={{ fontWeight: 400, fontSize: "14px" }}>
-                                {cast}
-                            </div>
-                        </div>
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Số lượng:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {detailPost.amount}
+                                    </div>
+                                </div>
+
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Giới tính:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {detailPost.gender}
+                                    </div>
+                                </div>
+
+                                <div style={{ paddingTop: "5px" }}>
+                                    <div style={{ fontWeight: 500, fontSize: "14px" }}>
+                                        Mức lương:
+                                    </div>
+                                    <div style={{ fontWeight: 400, fontSize: "14px" }}>
+                                        {cast}
+                                    </div>
+                                </div>
+
+                            </Grid>
+                        </Grid>
 
                         <div style={{ paddingTop: "5px" }}>
                             <div style={{ fontWeight: 500, fontSize: "14px" }}>
@@ -476,11 +501,12 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                                                             </Avatar>
                                                         </Tooltip>
 
-                                                        {/* <Tooltip title="Trang cá nhân">
-                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080" } }}>
+                                                        <Tooltip title="Xem trang cá nhân">
+                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080", cursor: "pointer" } }}
+                                                                onClick={(event) => handleClickSeeProfile(list.kols_info.id)}>
                                                                 <AccountCircleIcon sx={{ fontSize: 18 }} />
                                                             </Avatar>
-                                                        </Tooltip> */}
+                                                        </Tooltip>
 
                                                         <Tooltip title="Từ chối">
                                                             <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#DD0000", cursor: "pointer" } }}
@@ -549,11 +575,12 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                                                                 <CheckCircleIcon sx={{ fontSize: 18 }} />
                                                             </Avatar>
                                                         </Tooltip>
-                                                        {/* <Tooltip title="Trang cá nhân">
-                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080" } }}>
+                                                        <Tooltip title="Xem trang cá nhân">
+                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080", cursor: "pointer" } }}
+                                                                onClick={(event) => handleClickSeeProfile(list.kols_info.id)}>
                                                                 <AccountCircleIcon sx={{ fontSize: 18 }} />
                                                             </Avatar>
-                                                        </Tooltip> */}
+                                                        </Tooltip>
                                                         {/* <Tooltip title="Từ chối">
                                                         <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#DD0000" } }}>
                                                             <HighlightOffIcon sx={{ fontSize: 18 }} />
@@ -619,11 +646,12 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                                                                 <CheckCircleIcon sx={{ fontSize: 18 }} />
                                                             </Avatar>
                                                         </Tooltip> */}
-                                                        {/* <Tooltip title="Trang cá nhân">
-                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080" } }}>
+                                                        <Tooltip title="Xem trang cá nhân">
+                                                            <Avatar sx={{ width: 28, height: 28, "&:hover": { bgcolor: "#800080", cursor: "pointer" } }}
+                                                                onClick={(event) => handleClickSeeProfile(list.kols_info.id)}>
                                                                 <AccountCircleIcon sx={{ fontSize: 18 }} />
                                                             </Avatar>
-                                                        </Tooltip> */}
+                                                        </Tooltip>
                                                         <Tooltip title="Đã Từ Chối">
                                                             <Avatar sx={{ width: 28, height: 28, bgcolor: "#DD0000" }}>
                                                                 <HighlightOffIcon sx={{ fontSize: 18 }} />
@@ -639,7 +667,10 @@ export default function Show_post({ detailPost, id, loadingParent }) {
                         </div>
                     </Card>
                 </div>
-
+                <Modal_See_Profile_Kol
+                    idKol={idKolToSeeProfile}
+                    isOpen={openModalProfileKOL}
+                    isClose={(value) => handleCloseSeeProfile()} />
             </div>
         );
     else {

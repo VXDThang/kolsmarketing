@@ -174,10 +174,10 @@ export default function Result_ListDraftPostSubmit(props) {
                                             <Grid item xs={2}>
                                                 Phương tiện
                                             </Grid>
-                                            <Grid item xs={5}>
+                                            <Grid item xs={5.2}>
                                                 Nội dung
                                             </Grid>
-                                            <Grid item xs={1.8}>
+                                            <Grid item xs={1.6}>
                                                 Trạng thái
                                             </Grid>
                                         </Grid>

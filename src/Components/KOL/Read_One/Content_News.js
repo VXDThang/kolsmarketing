@@ -220,7 +220,7 @@ const Content_News = (props) => {
               <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                 <CardMedia
                   component="img"
-                  sx={{ width: 120, height: 120 }}
+                  sx={{  minWidth: 120, maxWidth:120, height: 120 }}
                   image={detailPost?.image_cover?.length > 0 ? detailPost?.image_cover : "../cover_image_post.jpg"}
                   alt="img"
                 />

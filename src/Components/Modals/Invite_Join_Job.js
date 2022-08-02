@@ -80,7 +80,6 @@ export default function Invite_Join_Job(props) {
             .then(res => res.json())
             .then(
                 (result2) => {
-                    console.log("Check is send success", result2);
                     if (result2) {
                         setLoadingSend(false)
                         handleAfterSendSuccess();
@@ -112,7 +111,6 @@ export default function Invite_Join_Job(props) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log("Link invite job is:", result)
                         setLinkInviteJob(result)
                     }
                 )

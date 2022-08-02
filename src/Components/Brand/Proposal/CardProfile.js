@@ -14,7 +14,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChatIcon from '@mui/icons-material/Chat';
 import Tooltip from '@mui/material/Tooltip';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { DOMAIN_API, DOMAIN_FE } from '../../../config/const'
+
+//file
+import Modal_See_Profile_Kol from '../../Modals/Brand_See_Profile_Kol';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -33,6 +38,19 @@ export default function CardProfile({ infor, idBrand }) {
     let actoken = localStorage.access_token;
     const [expanded, setExpanded] = React.useState(false);
     const [isLike, setIsLike] = React.useState(infor.likeKol ? infor.likeKol : false);
+
+    const [openModalProfileKOL, setOpenModalProfileKOL] = React.useState(false);
+    const [idKolToSeeProfile, setIdKolToSeeProfile] = React.useState('');
+
+    const handleClickSeeProfile = (id_kol) => {
+        setIdKolToSeeProfile(id_kol);
+        setOpenModalProfileKOL(true)
+    }
+
+    const handleCloseSeeProfile = () => {
+        setIdKolToSeeProfile('');
+        setOpenModalProfileKOL(false)
+    }
 
     async function handleOpenRoomMessage() {
         await fetch(DOMAIN_API + `message/open-room`, {
@@ -102,8 +120,11 @@ export default function CardProfile({ infor, idBrand }) {
                         src={infor.avatar ? infor.avatar : "kol.jpg"}>
                     </Avatar>
                 }
-                title={infor.full_name ? infor.full_name : "Influencer"}
-                subheader="Influencer"
+                title={infor.full_name ? <span style={{ fontWeight: 500 }}> {infor.full_name} </span> : <span>Influencer </span>}
+                subheader={<span>Influencer
+                    <span style={{ paddingLeft: "20px", fontWeight: 600 }}>
+                        {infor.count_followers} Nhãn hàng theo dõi
+                    </span> </span>}
             />
             <CardMedia
                 component="img"
@@ -137,6 +158,16 @@ export default function CardProfile({ infor, idBrand }) {
                         <ChatIcon sx={{ fontSize: 22, "&:hover": { color: "#1b74e4" } }} />
                     </IconButton>
                 </Tooltip>
+
+                <Tooltip title="Xem trang cá nhân">
+                    <IconButton
+                        onClick={(event) => handleClickSeeProfile(infor.id_kol)}
+                        aria-label="chat"
+                        sx={{ width: 36, height: 36, "&:hover": { bgcolor: "#EEEEEE" } }}>
+                        <AccountCircleIcon sx={{ fontSize: 22, "&:hover": { color: "#AD5AE0" } }} />
+                    </IconButton>
+                </Tooltip>
+
                 <ExpandMore
                     expand={expanded}
                     onClick={handleExpandClick}
@@ -171,6 +202,12 @@ export default function CardProfile({ infor, idBrand }) {
                     </Typography>
                 </CardContent>
             </Collapse>
+
+            <Modal_See_Profile_Kol
+                idKol={idKolToSeeProfile}
+                isOpen={openModalProfileKOL}
+                isClose={(value) => handleCloseSeeProfile()} />
+
         </Card>
     );
 }

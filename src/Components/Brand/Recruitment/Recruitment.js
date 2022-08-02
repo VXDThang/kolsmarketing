@@ -31,7 +31,7 @@ const commonStyles = {
 
 function formatDateTime(create_time) {
     const time = new Date(create_time)
-    const result = time.getDate() + "/" + time.getMonth() + "/" + time.getFullYear() + " " + time.getHours() + ":" + time.getMinutes();
+    const result = time.getDate() + "/" + (time.getMonth()+1) + "/" + time.getFullYear() + " " + time.getHours() + ":" + time.getMinutes();
     return result
 };
 
@@ -309,7 +309,7 @@ export default function Recruitment(props) {
                                             <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                                                 <CardMedia
                                                     component="img"
-                                                    sx={{ width: 100, height: 100 }}
+                                                    sx={{ minWidth: 100, maxWidth: 100, height: 100 }}
                                                     image={list.image_cover ? list.image_cover : "cover_image_post.jpg"}
                                                     alt="img"
                                                 />

@@ -3,11 +3,16 @@
     display: inline-block;
 }
 
-.dropdown-content_kol {
+.dropdown-content_brand {
     display: none;
     position: absolute;
     background-color: #FAFAFA;
-    min-width: 250px;
+    min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    right: 0px;
+}
+
+.dropdown_kol:hover .dropdown-content_brand {
+    display: block;
 }

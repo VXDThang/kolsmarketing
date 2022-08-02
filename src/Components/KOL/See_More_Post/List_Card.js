@@ -53,7 +53,7 @@ export default function List_Card({ type }) {
 
     return ( 
         <div >
-            <Card>
+            <Card sx={{boxShadow:"none"}}>
                 <div style={{ backgroundColor: type==1?"#00B14F":"#660066"  }}>
                     <div style={{ paddingLeft: "20px", paddingRight: "20px", paddingTop: "40px", paddingBottom: "40px", color: "white" }}>
                         {type == 1 ?
@@ -78,7 +78,7 @@ export default function List_Card({ type }) {
 
                     </div>
                 </div>
-                <div style={{ border: type==1? '0.2em solid #00B14F' : '0.2em solid #660066'  }} >
+                <div style={{ border: type==1? '0.1em solid #00B14F' : '0.1em solid #660066'  }} >
                     {loading ?
                         <div style={{ paddingLeft: "20px", paddingRight: "20px", paddingTop: "20px", paddingBottom: "-10px" }}>
                             Đang tải dữ liệu ...

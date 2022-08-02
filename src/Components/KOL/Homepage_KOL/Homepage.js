@@ -37,9 +37,6 @@ export default function Homepage() {
   if (localStorage.access_token == null || localStorage.check_role =='2') {
     return (
       <div sx={{ flexGrow: 1 }}  >
-        {/* <Header />
-        <Search_Area />
-        <Content_Homepage /> */}
 
         <div style={{ display: "block", position: "fixed", height: "35px", top: 0, left: 0, right: 0, zIndex: 2 }}>
           <Header />
@@ -49,11 +46,11 @@ export default function Homepage() {
           <Search_Area />
         </div>
 
-        <div >
+        <div style={{ maxWidth: "100%" }}>
           <Content_Homepage />
         </div>
 
-        <div>
+        <div style={{ maxWidth: "100%" }}>
           <Footer />
         </div>
       </div>
@@ -62,9 +59,6 @@ export default function Homepage() {
   else {
     return (
       <div sx={{ flexGrow: 1 }}  >
-        {/* <Header_Access />
-        <Search_Area />
-        <Content_Homepage /> */}
 
         <div style={{ display: "block", position: "fixed", height: "35px", top: 0, left: 0, right: 0, zIndex: 10 }}>
           <Header_Access />

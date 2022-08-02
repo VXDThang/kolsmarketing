@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import { DOMAIN_FE, DOMAIN_API} from '../../../config/const'
+import { DOMAIN_FE, DOMAIN_API } from '../../../config/const'
 
 //file
 import "./Header.css"
@@ -126,10 +126,6 @@ export default function Header_Access() {
         window.open(url);
     };
 
-    function handleGoToPageSaveOpportunity() {
-        navigate('/save-opportunity');
-    }
-
 
 
 
@@ -137,46 +133,22 @@ export default function Header_Access() {
         <div sx={{ flexGrow: 1 }}  >
             <AppBar position="static" theme={theme}>
                 <Toolbar>
-                    <a href = "/" style={{textDecoration:"none"}}>
-                    <Typography
-                        variant="h4"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' }, fontWeight: 'bold', color: "#1b5e20" }}
-                    >
-                        KOLsMarketing
-                    </Typography>
+                    <a href="/" style={{ textDecoration: "none" }}>
+                        <Typography
+                            variant="h4"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', sm: 'block' }, fontWeight: 'bold', color: "#00b14f" }}
+                        >
+                            KOLs<span style={{ color: "#B0097F" }}>Marketing</span>
+                        </Typography>
                     </a>
-                    {/* <Typography
-            noWrap
-            component="div"
-            sx={{ fontWeight: 'bold', marginLeft: "30px", color: "#212121" }}>
-            Cơ hội
-          </Typography>
-          <Typography
-            noWrap
-            component="div"
-            sx={{ fontWeight: 'bold', marginLeft: "30px", color: "#212121" }}>
-            Nhãn hàng
-          </Typography> */}
-
-                    {/* <div className="dropdown" style={{ paddingLeft: "30px" }}>
-            <div className="category">
-              Dropdown
-            </div>
-            <div className="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div> */}
-
 
                     <div className="dropdown_kol" style={{ paddingLeft: "30px" }}>
                         <button className="button button_cat1">Cơ hội</button>
                         <div className="dropdown-content_kol"  >
                             <a href="/">  <TravelExploreIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Tìm cơ hội mới</a>
-                            <a onClick={handleGoToPageSaveOpportunity}>  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
+                            <a href="/save-opportunity">  <FavoriteIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã lưu</a>
                             <a href="/have-opportunity">  <WorkIcon sx={{ fontSize: 35, paddingBottom: 1, color: "#00B14F", paddingRight: "15px" }} /> Cơ hội đã ứng tuyển</a>
                         </div>
                     </div>
@@ -234,135 +206,36 @@ export default function Header_Access() {
                                         isOpen={menuAvatar}
                                         isClose={(value) => { handleCloseMenuAvatar(value) }}
                                         listNoti={listNotification}
-                                        />
+                                    />
                                 </div>
                                 : ""
                             }
 
-                            {/* test đúng ở đây */}
-                            {/* <Menu
-                                id="simple-menu"
-                                anchorEl={menuAvatar}
-                                open={Boolean(menuAvatar)}
-                                onClose={handleCloseMenuAvatar}
-                                onClick={handleCloseMenuAvatar}
-                                PaperProps={{
-                                    elevation: 0,
-                                    sx: {
-                                        overflow: 'visible',
-                                        filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                        mt: 1.5,
-                                        '& .MuiAvatar-root': {
-                                            width: 32,
-                                            height: 32,
-                                            ml: -0.5,
-                                            mr: 1,
-                                        },
-                                        '&:before': {
-                                            content: '""',
-                                            display: 'block',
-                                            position: 'absolute',
-                                            top: 0,
-                                            right: 14,
-                                            width: 10,
-                                            height: 10,
-                                            bgcolor: 'background.paper',
-                                            transform: 'translateY(-50%) rotate(45deg)',
-                                            zIndex: 0,
-                                        },
-                                    },
-                                }}
-                                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                            >
-
-                                <MenuItem>
-                                    XXXXX
-                                    <div>
-                                        xcv
-                                    </div>
-                                    <div>
-                                        ằqr
-                                    </div>
-                                </MenuItem>
-                                <MenuItem>
-                                    <ListItemText >
-                                        <div>
-                                            xcv
-                                        </div>
-                                        <div>
-                                            ằqr
-                                        </div>
-                                    </ListItemText>
-                                </MenuItem>
-                                <MenuItem>
-                                    zzzz
-                                </MenuItem>
-                                <MenuItem>
-                                    XXXXszfX
-                                </MenuItem>
-                            </Menu> */}
-
-
-                            {/* <Avatar sx={{ width: 30, height: 30, bgcolor: "#00B14F" }}>
-                                <NotificationsIcon sx={{ fontSize: 18 }} />
-                            </Avatar> */}
-                            {/* <Chip
-                                avatar={<Avatar alt="Natacha" src="avatar.jpg" />}
-                                label="Võ Xuân Đức Thắng"
-                                variant="outlined"
-                                onClick={handleOpenMenuAvatar}
-                                onMouseOver={handleOpenMenuAvatar}
-                            />
-                            <Menu
-                                id="simple-menu"
-                                anchorEl={menuAvatar}
-                                open={Boolean(menuAvatar)}
-                                onClose={handleCloseMenuAvatar}
-                                MenuListProps={{ onMouseLeave: handleCloseMenuAvatar }}
-                                PaperProps={{
-                                    style: {
-                                        transform: 'translateX(0px) translateY(0px)',
-                                    }
-                                }}
-                            >
-
-                                <MenuItem onClick={goToAccount}>
-                                    <ListItemIcon>
-                                        <PersonIcon fontSize="small" />
-                                    </ListItemIcon>
-                                    Tài khoản
-                                </MenuItem>
-                                <MenuItem onClick={handleLogout}>
-                                    <ListItemIcon>
-                                        <Logout fontSize="small" />
-                                    </ListItemIcon>
-                                    Đăng xuất
-                                </MenuItem>
-                            </Menu> */}
-
                             <div className="dropdown_kol" style={{}}>
                                 <Chip
-                                    avatar={<Avatar alt="Natacha" 
-                                    src={profile?.avatar?profile.avatar:""} />}
-                                    label={profile?.full_name?profile.full_name:"Influencer"}
+                                    avatar={<Avatar alt="Natacha"
+                                        src={profile?.avatar ? profile.avatar : ""} />}
+                                    label={profile?.full_name ? profile.full_name : "Influencer"}
                                     variant="outlined"
 
                                 />
-                                <div className="dropdown-content_kol" >
-
-                                    <MenuItem onClick={goToAccount}>
-                                        <ListItemIcon>
-                                            <PersonIcon fontSize="small" />
-                                        </ListItemIcon>
-                                        Tài khoản
-                                    </MenuItem>
-                                    <MenuItem onClick={handleLogout}>
-                                        <ListItemIcon>
-                                            <Logout fontSize="small" />
-                                        </ListItemIcon>
-                                        Đăng xuất
-                                    </MenuItem>
+                                <div className="dropdown-user_kol " >
+                                    <a>
+                                        <MenuItem onClick={goToAccount}>
+                                            <ListItemIcon>
+                                                <PersonIcon fontSize="small" />
+                                            </ListItemIcon>
+                                            Tài khoản
+                                        </MenuItem>
+                                    </a>
+                                    <a>
+                                        <MenuItem onClick={handleLogout}>
+                                            <ListItemIcon>
+                                                <Logout fontSize="small" />
+                                            </ListItemIcon>
+                                            Đăng xuất
+                                        </MenuItem>
+                                    </a>
                                 </div>
                             </div>
 

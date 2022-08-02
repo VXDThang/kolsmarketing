@@ -93,7 +93,7 @@ export default function Save_Brand_Page() {
 
 
 
-    if (localStorage.access_token == null || localStorage.check_role =='2') {
+    if (localStorage.access_token == null || localStorage.check_role == '2') {
         localStorage.setItem("beforeLink", window.location.pathname);
         return (
             <div sx={{ flexGrow: 1 }}  >
@@ -130,8 +130,8 @@ export default function Save_Brand_Page() {
                                     </div>
 
 
-                                    <div>
-                                        <FormControl sx={{ width: '400px', backgroundColor: "white", borderRadius: "5px" }} variant="outlined">
+                                    <div style={{ paddingRight: "30px" }}>
+                                        <FormControl sx={{ width: '100%', backgroundColor: "white", borderRadius: "5px" }} variant="outlined">
                                             <InputLabel
                                                 htmlFor="outlined-search">Tìm kiếm</InputLabel>
                                             <OutlinedInput
@@ -171,6 +171,10 @@ export default function Save_Brand_Page() {
                                             <Card_Brand info={list} />
                                         </Grid>
                                     ))}
+                                    {listSaveBrand.length == 0 ?
+                                        <div style={{paddingTop:"20px", paddingLeft:"10px"}}>
+                                            Chưa có nhãn hàng nào
+                                        </div> : ""}
                                 </Grid>
                             </div >
                         </div>

@@ -457,12 +457,12 @@ export default function Job_Content({ idJobPicker }) {
                                 fontSize: "14px",
                                 color: typeDis ? "green" : "#c0c0c0",
                                 fontWeight: typeDis ? 600 : 400,
-                              }}>{typeDis ? <span>Ok </span> : <span>Chọn thể loại </span>}</InputLabel>
+                              }}>{typeDis ? <span>Type </span> : <span>Chọn thể loại </span>}</InputLabel>
                             <Select
                               labelId="demo-simple-select-label"
                               id="demo-simple-select"
                               value={typeDis}
-                              label={typeDis ? <span>Ok </span> : <span>Chọn thể loại </span>}
+                              label={typeDis ? <span>Type </span> : <span>Chọn thể loại </span>}
                               onChange={handleSelectTypeDis}
                               size="small"
 

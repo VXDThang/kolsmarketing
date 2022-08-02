@@ -140,7 +140,7 @@ export default function Result_Search() {
 
 
                         <Typography color="text.primary">
-                            <span style={{ fontSize: "15px" }}>
+                            <span  style={{color: "#B0097F", fontSize:"14px", fontWeight:500}} >
                                 Kết quả tìm kiếm được
                             </span>
                         </Typography>
@@ -178,7 +178,7 @@ export default function Result_Search() {
                                                 }}>
                                                     Có thể bạn quan tâm
                                                 </div>
-                                                <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+                                                <div style={{ paddingTop: "5px" }}>
                                                     <Divider sx={{ color: "#00B14F" }} />
                                                 </div>
                                                 <div>

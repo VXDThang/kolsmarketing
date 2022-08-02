@@ -38,8 +38,11 @@ export default function PageKOL({ profileKOL }) {
                                     <div style={{ fontWeight: "600", fontSize: "20px" }}>
                                         {profileKOL?.full_name ? profileKOL.full_name : "Không có tên"}
                                     </div>
-                                    <div style={{ fontWeight: "400", fontSize: "20px" }}>
-                                        {profileKOL?.nick_name ? "(" + profileKOL.nick_name + ")" : ""}
+                                </div>
+
+                                <div className='d-flex justify-content-center' style={{ paddingTop: "5px" }}>
+                                    <div style={{  fontSize: "14px" }}>
+                                        {profileKOL?.count_followers ? <span>  <span style={{fontWeight: "600"}}> {profileKOL.count_followers} </span> Nhãn hàng theo dõi </span>: ""}
                                     </div>
                                 </div>
                                 <div style={{ paddingTop: "15px" }}>
@@ -175,16 +178,15 @@ export default function PageKOL({ profileKOL }) {
 
 
 
-                    <div className='d-flex justify-content-between'>
+                    {/* <div className='d-flex justify-content-between'>
                         <div style={{ fontWeight: "600", fontSize: "18px", paddingTop: "5px" }}>
-                            Bạn đang xem Kol {profileKOL?.full_name ? 
-                            <span style={{color:"#2c6975", fontWeight:600, fontSize:"20px"}}>{profileKOL.full_name}</span>
-                             : ""}
+                            Bạn đang xem Kol {profileKOL?.full_name ?
+                                <span style={{ color: "#00b14f", fontWeight: 600, fontSize: "20px" }}>{profileKOL.full_name}</span>
+                                : ""}
                         </div>
+                    </div> */}
 
-                    </div>
-
-                    <div style={{ paddingTop: "15px" }}>
+                    <div style={{ paddingTop: "0px" }}>
                         <Card sx={{ borderColor: '#00B14F' }} >
                             <div style={{ padding: "10px" }}>
                                 <div className='d-flex justify-content-between'>

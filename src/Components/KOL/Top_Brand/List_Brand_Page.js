@@ -54,7 +54,7 @@ export default function List_Brand_Page() {
                     (result) => {
                         setListBrands(result);
                         if (result.length > 15) {
-                            setList15Brands(result.slice(0, 14));
+                            setList15Brands(result.slice(0, 15));
                             setListBrandsMore(result.slice(15, result.length - 1))
                         }
                         else {
@@ -84,7 +84,7 @@ export default function List_Brand_Page() {
                 }
             }
             if (listBrandSearch.length > 15) {
-                setList15Brands(listBrandSearch.slice(0, 14));
+                setList15Brands(listBrandSearch.slice(0, 15));
                 setListBrandsMore(listBrandSearch.slice(15, listBrandSearch.length - 1))
             }
             else {
@@ -95,7 +95,7 @@ export default function List_Brand_Page() {
         else {
             setLoading(false);
             if (listBrands.length > 15) {
-                setList15Brands(listBrands.slice(0, 14));
+                setList15Brands(listBrands.slice(0, 15));
                 setListBrandsMore(listBrands.slice(15, listBrands.length - 1))
             }
             else {
@@ -112,7 +112,7 @@ export default function List_Brand_Page() {
         else {
             setValues(event.target.value)
             if (listBrands.length > 15) {
-                setList15Brands(listBrands.slice(0, 14));
+                setList15Brands(listBrands.slice(0, 15));
                 setListBrandsMore(listBrands.slice(15, listBrands.length - 1))
             }
             else {
@@ -141,8 +141,8 @@ export default function List_Brand_Page() {
                     </div>
 
 
-                    <div>
-                        <FormControl sx={{ width: '400px', backgroundColor: "white", borderRadius: "5px" }} variant="outlined">
+                    <div style={{paddingRight:"30px"}}>
+                        <FormControl sx={{ width: '100%', backgroundColor: "white", borderRadius: "5px" }} variant="outlined">
                             <InputLabel
                                 htmlFor="outlined-search">Tìm kiếm</InputLabel>
                             <OutlinedInput

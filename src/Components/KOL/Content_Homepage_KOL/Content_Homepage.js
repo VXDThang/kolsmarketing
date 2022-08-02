@@ -51,7 +51,6 @@ const Content_Homepage = () => {
     currentTodos = [];
   }
 
-  console.log("currentTodos: ", currentTodos)
   React.useEffect(() => {
     let url1 = "";
     url1 = DOMAIN_API + 'posts/get-newest-post';

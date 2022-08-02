@@ -81,15 +81,7 @@ export default function LabTabs() {
                 <Tab key={{ index }}
                   label={<span style={{ fontWeight: "600" }}> {cate.name} </span>}
                   value={cate.id} />
-                // <Tab key={{ index }} icon={<VideocamIcon sx={{ color: "#00B14F" }} />} label={cate.name} value={cate.id} />
               ))}
-              {/* 
-              <Tab icon={<VideocamIcon sx={{ color: "#00B14F" }} />} label="Livestream" value="1" />
-              <Tab icon={<VideoSettingsIcon sx={{ color: "#00B14F" }} />} label="Review, Pr" value="2" />
-              <Tab icon={<ImageSearchIcon sx={{ color: "#00B14F" }} />} label="Chụp hình" value="3" />
-              <Tab icon={<MmsIcon sx={{ color: "#00B14F" }} />} label="Feedback" value="4" />
-              <Tab icon={<PeopleAltIcon sx={{ color: "#00B14F" }} />} label="Trợ lý" value="5" />
-              <Tab icon={<FavoriteIcon sx={{ color: "#00B14F" }} />} label="Khác" value="6" /> */}
 
             </TabList>
           </Box>
@@ -97,7 +89,6 @@ export default function LabTabs() {
           {categories.length > 0 && categories.map((cate, index) => (
             <TabPanel key={{ index }} value={cate.id}><Job_Card id={cate.id} name={cate.name} /></TabPanel>
           ))}
-
 
         </TabContext>
       }

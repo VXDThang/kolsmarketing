@@ -140,7 +140,7 @@ export default function See_More_Post_For_You() {
                                         }}>
                                             Các nhãn hàng nổi bật
                                         </div>
-                                        <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+                                        <div style={{ paddingTop: "5px", paddingBottom: "0px" }}>
                                             <Divider sx={{ color: "#00B14F" }} />
                                         </div>
                                         <div>

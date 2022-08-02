@@ -162,7 +162,7 @@ export default function RoomList(props) {
 
                                         <CardMedia
                                             component="img"
-                                            sx={{ width: 100, height: 100 }}
+                                            sx={{ minWidth: 100, maxWidth:100, height: 100 }}
                                             image={list.image_cover ? list.image_cover : "cover_image_post.jpg"}
                                             alt="img"
                                         />

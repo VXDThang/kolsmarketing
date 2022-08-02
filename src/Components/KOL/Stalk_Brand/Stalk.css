@@ -5,7 +5,7 @@
 
 .ava {
     position: relative;
-    bottom: 75px;
+    bottom: 80px;
     padding-left: 50px;
 }
 
@@ -32,13 +32,33 @@
 
 .name_brand {
     position: relative;
-    bottom: 140px;
+    bottom: 45x;
     right: -250px;
-    width: "500px"
+    width: "500px";
+    display: -webkit-box;
+    max-height: 1.8rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    line-height: 1.8rem;
 }
 
 .link {
     position: relative;
     bottom: 120px;
     right: -250px;
+}
+
+.link_bottom {
+    position: relative;
+    bottom: 138px;
+    right: -250px;
+}
+
+.info_bottom {
+    position: pixelated;
+    bottom: 45px;
+    padding-left: -250px;
 }

@@ -40,7 +40,7 @@ export default function NewsProposal({idBrand}) {
             })
                 .then(res => res.json())
                 .then(
-                    (result) => {
+                    (result) => {                        
                         setLoading(true);
                         setListCardKOL(result);
                         setError(null);
@@ -70,40 +70,12 @@ export default function NewsProposal({idBrand}) {
                 <div>
                     <Grid container spacing={2}>
                         {listCardKOL?.length > 0 && listCardKOL.map((list, index) => (
-                            <Grid key={index} item xs={6}>
+                            <Grid key={index} item xs={4}>
                                 <CardProfile infor={list} idBrand={idBrand}/>
                             </Grid>
                         ))}
-                        {/* <Grid item xs={6}>
-                            <CardProfile />
-                        </Grid> */}
-
-                        {/* <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CardProfile />
-                    </Grid> */}
                     </Grid>
                 </div>
-                {/* <div>
-                {openBoxChat && <BoxChat/>}
-            </div> */}
             </divPage>
         );
     }

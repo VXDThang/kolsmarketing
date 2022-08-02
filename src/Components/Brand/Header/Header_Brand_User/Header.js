@@ -307,7 +307,7 @@ export default function Header_Brand() {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" noWrap component="div" sx={{ color: "#00B14F" }}>
-                            KOLsMarketing Brand
+                        KOLs<span style={{color:"#B0097F"}}>Marketing</span> - Brand
                         </Typography>
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -357,7 +357,7 @@ export default function Header_Brand() {
                                         label={profileBrand.brand_name}
                                         variant="outlined"
                                     />
-                                    <div className="dropdown-content_kol" >
+                                    <div className="dropdown-content_brand" >
                                         <MenuItem onClick={handleLogout}>
                                             <ListItemIcon>
                                                 <Logout fontSize="small" />

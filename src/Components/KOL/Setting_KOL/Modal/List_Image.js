@@ -60,8 +60,33 @@ export default function List_Image(props) {
     };
 
     const fileSelectHandler = async (event) => {
+
+        console.log("Data image before blob: ", choiceImage)
+        for (let i = 0; i < choiceImage.length; i++) {
+            console.log("File is: ", choiceImage[i])
+            console.log("Type of file is: ", typeof(choiceImage[i]))
+            if (typeof(choiceImage[i]) == 'string') {
+                if (choiceImage[i].lastIndexOf("blob") != -1) {
+                    var name_image = 'fileImageChange' + i + '.jpg';
+                    var temp = new File(
+                        [choiceImage[i]],
+                        name_image,
+                        {
+                            type: 'image/jpg',
+                            lastModified: new Date().getTime()
+                        }
+                    )
+                    choiceImage[i] = temp;
+                }
+            }
+        }
+
         var list = choiceImage.length ? [...choiceImage] : [];
+
+        console.log("Data image before not blob: ", choiceImage)
         var dataList = choiceImage.length ? [...choiceImage] : [];
+
+        console.log("Data image after: ", dataList)
         for (let i = 0; i < event.target.files.length; i++) {
             list.push(URL.createObjectURL(event.target.files[i]));
             dataList.push(event.target.files[i]);
@@ -100,6 +125,7 @@ export default function List_Image(props) {
         setLoading(true);
         let files = []
         event.preventDefault();
+        console.log("Files image to cloud: ", dataImage)
         for (var x = 0; x < dataImage.length; x++) {
             var formdata = new FormData();
             var publich = `${new Date().getTime()}${Math.random()}`
@@ -121,6 +147,8 @@ export default function List_Image(props) {
             let json = await res.json();
             files.push(json.secure_url);
         }
+
+        console.log("Files image to push: ", files)
 
         fetch(DOMAIN_API + `kols/update-detail-images`, {
             method: "POST",

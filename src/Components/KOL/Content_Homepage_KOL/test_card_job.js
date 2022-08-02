@@ -112,7 +112,7 @@ const CardJob1 = ({ id, title, brandName, time, address, hot, cast, image_cover,
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <CardMedia
             component="img"
-            sx={{ width: 120, height: 120, cursor: "pointer" }}
+            sx={{minWidth: 120, maxWidth:120, height: 120, cursor: "pointer" }}
             image={image_cover?.length > 0 ? image_cover : "cover_image_post.jpg"}
             alt="img"
             onClick={(e) => { handleClickReadOne(e, id) }}

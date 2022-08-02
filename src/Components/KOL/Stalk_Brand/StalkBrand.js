@@ -29,7 +29,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import CallIcon from '@mui/icons-material/Call';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import ChatIcon from '@mui/icons-material/Chat';
-
+import PeopleIcon from '@mui/icons-material/People';
 const commonStyles = {
   bgcolor: 'background.paper',
   border: 1,
@@ -126,6 +126,7 @@ const StalkBrand = () => {
         .then(res => res.json())
         .then(
           (result) => {
+            console.log("Profile Brand is: ",result )
             setProfileBrand(result);
             setIsSave(result.likeBrand)
             setLoading(true);
@@ -169,7 +170,7 @@ const StalkBrand = () => {
         </div>
 
         <div style={{ paddingTop: "70px" }}>
-          <div className="back-ground-content">
+          <div  style={{backgroundColor:"#EEFFF6"}}>
             <div className="container" style={{ paddingLeft: "5%", paddingRight: "5%", paddingTop: "20px", paddingBottom: "20px" }}>
 
               {loading ?
@@ -185,35 +186,35 @@ const StalkBrand = () => {
                         Danh sách nhãn hàng
                       </Link>
 
-                      <Typography color="text.primary">Nhãn hàng {profileBrand.brand_name}</Typography>
+                      <Typography color="text.primary">
+                        <span  style={{color: "#B0097F", fontSize:"14px", fontWeight:500}}>Nhãn hàng {profileBrand.brand_name}</span></Typography>
                     </Breadcrumbs>
                   </div>
-                  <div >
+                  <div>
                     <div className="cov" style={{ borderRadius: "5px" }}>
                       <div>
                         <img id="cover" src={profileBrand.cover ? profileBrand.cover : "../cover1.jpg"}
-                          style={{ borderRadius: "5px 5px 0px 0px" }} />
+                          style={{ borderRadius: "5px 5px 0px 0px", objectFit: "cover" }} />
                       </div>
                       <div className="ava">
                         <img id='avatar' src={profileBrand.avatar ? profileBrand.avatar : "../brand_ava.jpg"} />
                       </div>
-
-                      <div style={{ width: "700px" }}>
-                        <div className="name_brand" style={{ fontSize: "20px", fontWeight: "600" }}>
-                          {profileBrand.brand_name}
+                      <div style={{ width: "750px", height:"auto" }}>
+                        <div className="name_brand" 
+                        style={{ fontSize: "20px", fontWeight: "600", height:"auto" }}>
+                          {profileBrand.brand_name} 
                         </div>
-                        <div className="link" style={{ fontSize: "14px", fontWeight: "300", marginBottom: "3px" }}>
+                        <div className="link_bottom" style={{ fontSize: "14px", fontWeight: "300" }}>
                           <Grid container spacing={2}>
                             {/* ---- Infomation ---- */}
                             <Grid item xs={0.7}>
                               <Avatar sx={{ width: 28, height: 28, bgcolor: "#d4f5d6" }}>
-                                <LinkIcon sx={{ fontSize: 18, color: "#00B14F" }} />
+                                <PeopleIcon sx={{ fontSize: 18, color: "#00B14F" }} />
                               </Avatar>
                             </Grid>
                             <Grid item xs={5.3}>
                               <div style={{ fontSize: "14px", fontWeight: "400" }}>
-                                {profileBrand.bio_url.length > 0 ? profileBrand.bio_url[0]
-                                  : "Chưa có thông tin"}
+                                {profileBrand.count_followers} Người theo dõi
                               </div>
                             </Grid>
 
@@ -252,16 +253,16 @@ const StalkBrand = () => {
                               <div>
                                 {isSave ?
                                   <Tooltip title="Bỏ lưu nhãn hàng">
-                                    <Button sx={{ height: "40px", bgcolor: "#FFCCFF" }}
+                                    <Button sx={{ height: "40px", bgcolor: "#d3f4d6" }}
                                       onClick={handleUnSaveBrand} >
-                                      <HighlightOffIcon sx={{ fontSize: 20, color: "#DD0000" }} />
+                                      <StarsIcon sx={{ fontSize: 20, color: "#00B14F" }} />
                                     </Button>
                                   </Tooltip>
                                   :
                                   <Tooltip title="Lưu nhãn hàng">
-                                    <Button sx={{ height: "40px", bgcolor: "#d3f4d6" }}
+                                    <Button sx={{ height: "40px", bgcolor: "#E8E8E8" }}
                                       onClick={handleSaveBrand} >
-                                      <StarsIcon sx={{ fontSize: 20, color: "#00B14F" }} />
+                                      <StarsIcon sx={{ fontSize: 20, color: "#B5B5B5" }} />
                                     </Button>
                                   </Tooltip>
                                 }

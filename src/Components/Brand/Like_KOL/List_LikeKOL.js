@@ -45,6 +45,7 @@ export default function List_LikeKOL(props) {
 
     let actoken = localStorage.access_token;
     async function getListKolLike() {
+        
         try {
             let url1 = "";
             url1 = DOMAIN_API + `brands/get-kol-user-like`;
@@ -72,7 +73,7 @@ export default function List_LikeKOL(props) {
     }
     React.useEffect(() => {
         getListKolLike();
-    }, [])
+    }, [props])
 
     const handleShowProfileKol = (event, index, id) => {
         idKolSelect(id);
@@ -242,7 +243,7 @@ export default function List_LikeKOL(props) {
                                         }}
                                             onClick={(event) => handleShowProfileKol(event, index, list.id)}
                                         >
-                                            <RemoveRedEyeIcon sx={{ color: "blue" }} />
+                                            <RemoveRedEyeIcon sx={{ color: "#00b14f" }} />
                                             <span style={{ fontSize: "14px", color: "black", fontWeight: 500, paddingLeft: "2px" }}>
                                                 Xem trang cá nhân</span>
                                         </div>

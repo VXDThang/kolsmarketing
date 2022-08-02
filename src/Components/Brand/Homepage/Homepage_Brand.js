@@ -123,8 +123,8 @@ export default function Homepage_Brand() {
                 label: "Số bài Tuyển dụng / Chiến dịch",
                 data: [0],
                 fill: true,
-                backgroundColor: "rgba(75,192,192,0.2)",
-                borderColor: "rgba(75,192,192,1)",
+                backgroundColor: "green",
+                borderColor: "green",
             },
         ],
 
@@ -144,8 +144,8 @@ export default function Homepage_Brand() {
                             label: "Số bài Tuyển dụng/ Chiến dịch",
                             data: data,
                             fill: true,
-                            backgroundColor: "rgba(75,192,192,0.2)",
-                            borderColor: "rgba(75,192,192,1)"
+                            backgroundColor: "green",
+                            borderColor: "green"
                         },
                     ]
                 })
@@ -302,8 +302,8 @@ export default function Homepage_Brand() {
                                     label: "Số bài Tuyển dụng/ Chiến dịch",
                                     data: data,
                                     fill: true,
-                                    backgroundColor: "rgba(75,192,192,0.2)",
-                                    borderColor: "rgba(75,192,192,1)"
+                                    backgroundColor: "green",
+                                    borderColor: "green"
                                 },
                             ]
                         }

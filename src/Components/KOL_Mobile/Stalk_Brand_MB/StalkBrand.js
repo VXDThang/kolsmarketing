@@ -18,7 +18,7 @@ import StarsIcon from '@mui/icons-material/Stars';
 import { Avatar } from '@mui/material';
 import { DOMAIN_FE, DOMAIN_API } from '../../../config/const'
 import Divider from '@mui/material/Divider';
-
+import PeopleIcon from '@mui/icons-material/People';
 //file
 import Information from './Information'
 import Recruitment from './Recruitment'
@@ -197,7 +197,7 @@ const StalkBrand = () => {
                     <div className="cov" style={{ borderRadius: "5px 0px 0px 5px" }}>
                       <div>
                         <img id="cover" src={profileBrand.cover ? profileBrand.cover : "../cover1.jpg"}
-                          style={{ borderRadius: "5px 5px 0px 0px" }} />
+                          style={{ borderRadius: "5px 5px 0px 0px", objectFit: "cover"  }} />
                       </div>
                       <div className="ava_MB">
                         <img id='avatar_MB' src={profileBrand.avatar ? profileBrand.avatar : "../brand_ava.jpg"} />
@@ -221,6 +221,17 @@ const StalkBrand = () => {
                         <div style={{ fontSize: "14px", fontWeight: "300", marginBottom: "3px", paddingTop: "10px" }}>
                           <Grid container spacing={2}>
                             {/* ---- Infomation ---- */}
+                            <Grid item xs={1.5}>
+                              <Avatar sx={{ width: 28, height: 28, bgcolor: "#d4f5d6" }}>
+                                <PeopleIcon sx={{ fontSize: 18, color: "#00B14F" }} />
+                              </Avatar>
+                            </Grid>
+                            <Grid item xs={10.5}>
+                              <div style={{ fontSize: "14px", fontWeight: "400" }}>
+                                {profileBrand.count_followers} Người theo dõi
+                              </div>
+                            </Grid>
+
                             <Grid item xs={1.5}>
                               <Avatar sx={{ width: 28, height: 28, bgcolor: "#d4f5d6" }}>
                                 <LinkIcon sx={{ fontSize: 18, color: "#00B14F" }} />
