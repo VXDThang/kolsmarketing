@@ -21,21 +21,21 @@ export default function Login({ socket, setIsLogined, navigate }) {
     const [canLogin, setCanLogin] = useState('');
     function invalidEmail(email) {
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if(email.match(mailformat)){
+        if (email.match(mailformat)) {
             setEmailErrorFormat('');
             return true;
-        }else{
+        } else {
             return false;
         }
     }
     function invalidPassword(password) {
-        if(password === ''){
+        if (password === '') {
             setErrorPassword("Bạn chưa nhập password");
             setCanLogin('Đăng nhập không thành công');
             return 0;
         }
-        else{
-            if(password.length < 8 || password.length > 26){
+        else {
+            if (password.length < 8 || password.length > 26) {
                 setErrorPassword("Password phải dài 8 đến 25 ký tự");
                 setCanLogin('Đăng nhập không thành công');
                 return 0;
@@ -52,16 +52,21 @@ export default function Login({ socket, setIsLogined, navigate }) {
     function handleChangeEmail(event) {
         setEmail(event.target.value)
     }
+
+    function goToBrandUser() {
+        navigate('/brand-user');
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         setCanLogin('');
-        let flag_mail  = invalidEmail(email);
+        let flag_mail = invalidEmail(email);
         if (flag_mail === false) {
             setEmailErrorFormat('Email không hợp lệ!');
             setCanLogin('Đăng nhập không thành công');
         }
         let flag_password = invalidPassword(password);
-        if (flag_password == 1){
+        if (flag_password == 1) {
             setErrorPassword('')
         }
         if (email !== '' && password !== '') {
@@ -75,9 +80,9 @@ export default function Login({ socket, setIsLogined, navigate }) {
             fetch(url, requestOptions)
                 .then(res => res.json())
                 .then((result) => {
-                    if (result.access_token==='error_email'){setCanLogin('Đăng nhập không thành công');}
-                    else if (result.access_token==='error_password'){setCanLogin('Đăng nhập không thành công');}
-                    else{
+                    if (result.access_token === 'error_email') { setCanLogin('Đăng nhập không thành công'); }
+                    else if (result.access_token === 'error_password') { setCanLogin('Đăng nhập không thành công'); }
+                    else {
                         localStorage.setItem('access_token', result.access_token);
                         localStorage.setItem('check_admin', result.isAdmin);
                         localStorage.setItem('check_role', result.role);
@@ -88,7 +93,7 @@ export default function Login({ socket, setIsLogined, navigate }) {
                 .catch(error => console.log('Form submit error', error))
         }
     }
-    if (localStorage.getItem('access_token')){
+    if (localStorage.getItem('access_token')) {
         const access_token = localStorage.getItem('access_token');
         socket?.emit('newUser', access_token);
         setIsLogined(true);
@@ -98,7 +103,7 @@ export default function Login({ socket, setIsLogined, navigate }) {
             localStorage.removeItem("beforeLink");
         }
         else
-        navigate('/brand-user');
+            goToBrandUser()
         // window.location.href = '/brand-user';
 
     }
@@ -112,24 +117,24 @@ export default function Login({ socket, setIsLogined, navigate }) {
                             <span style={{
                                 fontWeight: 'bold',
                                 color: 'red',
-                                }}>{canLogin}</span>
+                            }}>{canLogin}</span>
                             <div className="form-group">
                                 <label>Email</label>
-                                <Input 
-                                    type="text" 
-                                    name="email" 
-                                    id="email" 
-                                    className="form-control" 
-                                    placeholder="Nhập Email" 
-                                    value={email} 
-                                    onChange={handleChangeEmail}/>
+                                <Input
+                                    type="text"
+                                    name="email"
+                                    id="email"
+                                    className="form-control"
+                                    placeholder="Nhập Email"
+                                    value={email}
+                                    onChange={handleChangeEmail} />
                                 <span style={{
-                                fontWeight: 'bold',
-                                color: 'red',
+                                    fontWeight: 'bold',
+                                    color: 'red',
                                 }}>{emailErrorFormat}</span>
                             </div>
 
-                            <div className="form-group" style={{marginTop:"10px"}}>
+                            <div className="form-group" style={{ marginTop: "10px" }}>
                                 <label>Mật khẩu</label>
                                 <Input
                                     type={showPassword ? "text" : "password"}
@@ -149,28 +154,28 @@ export default function Login({ socket, setIsLogined, navigate }) {
                                     }
                                 />
                                 <span style={{
-                                fontWeight: 'bold',
-                                color: 'red',
+                                    fontWeight: 'bold',
+                                    color: 'red',
                                 }}>{errorPassword}</span>
                             </div>
 
-                            <div className="form-group" style={{marginTop:"5px"}}>
+                            <div className="form-group" style={{ marginTop: "5px" }}>
                                 <p className="forgot-password text-right">
-                                    <Link to="/brands-forget-password"  style={{color:"#00B14F",textDecoration: "none"}}>Quên mật khẩu?</Link>
+                                    <Link to="/brands-forget-password" style={{ color: "#00B14F", textDecoration: "none" }}>Quên mật khẩu?</Link>
                                 </p>
                             </div>
 
                             <Button type="submit"
                                 name="signin" id="signin" value="Đăng nhập" variant="contained"
-                                style={{ backgroundColor: "#00B14F", width: "auto" }} 
+                                style={{ backgroundColor: "#00B14F", width: "auto" }}
                                 onClick={handleSubmit}>Đăng nhập
                             </Button>
                             <div className="d-flex align-items-end flex-column">
-                               
-                                <div style={{marginTop:"20px"}}>
-                                <p className="forgot-password text-right"> <span> Bạn chưa có tài khoản?</span>
-                                    <Link to="/brand-register" style={{color:"#00B14F", fontWeight: "bold",textDecoration: "none"}}> Đăng ký ngay</Link>
-                                </p>
+
+                                <div style={{ marginTop: "20px" }}>
+                                    <p className="forgot-password text-right"> <span> Bạn chưa có tài khoản?</span>
+                                        <Link to="/brand-register" style={{ color: "#00B14F", fontWeight: "bold", textDecoration: "none" }}> Đăng ký ngay</Link>
+                                    </p>
                                 </div>
                             </div>
                         </form>
