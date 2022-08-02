@@ -98,7 +98,7 @@ export default function Login({ socket, setIsLogined, navigate }) {
             localStorage.removeItem("beforeLink");
         }
         else
-        navigate('/brand-login');
+        navigate('/brand-user');
         // window.location.href = '/brand-user';
 
     }
