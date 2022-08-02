@@ -70,14 +70,14 @@ export default function LabTabs({ value_parent, categories_parent }) {
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList
                 // scrollButtons="auto"
-                variant="scrollable"
+                // variant="scrollable"
                 onChange={handleChange} aria-label="lab API tabs example" centered
                 TabIndicatorProps={{
                   style: {
                     backgroundColor: "#00B14F",
                     textColor: "#00B14F",
                     indicatorColor: "#00B14F",
-                    marginLeft: "6px",
+                    marginLeft: "0px",
                     justifyContent: 'center',
                     alignItems: 'center',
                   },
@@ -87,7 +87,7 @@ export default function LabTabs({ value_parent, categories_parent }) {
                   alignItems: 'center', maxWidth: "100%", marginLeft: "20px"
                 }}>
                 {categories.length > 0 && categories.map((cate, index) => (
-                  <Tab key={{ index }} sx={{ marginLeft: "6px",}}
+                  <Tab key={{ index }} sx={{ marginLeft: "0px",}}
                     label={<span style={{ fontWeight: "500" }}> {cate.name} </span>}
                     value={cate.id} />
                 ))}
